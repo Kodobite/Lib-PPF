@@ -5,6 +5,8 @@
     <color name="colorPrimaryDark">#3769F1</color>
     <color name="colorAccent">#3769F1</color>
 
+    <color name="textColor">#050C20</color>
+
     <color name="danger">#FF3D71</color>
     <color name="dangerLight">#FFD6E2</color>
 

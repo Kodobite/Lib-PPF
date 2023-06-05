@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="#F3F4F8">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/relative_layout"
-        android:background="@color/colorPrimary">
+        android:background="#F3F4F8">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,10 +20,10 @@
 
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/ic_lock_img" />
 
 
         </LinearLayout>
@@ -37,9 +37,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Setup your PIN"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:text="Enter Your Password"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
 
 
         <io.kodebite.ppf.IndicatorDots
@@ -49,27 +49,31 @@
             android:layout_above="@id/pin_lock_view"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            app:ppf_count="4"
-            app:ppf_diameter="15dp"
-            app:ppf_dotColorFilled="#FFFFFF"
+            app:ppf_count="6"
+            app:ppf_diameter="20dp"
+            app:ppf_dotColorFilled="@color/colorPrimary"
             app:ppf_dotColorNormal="#A8A8A8"
             app:ppf_padding="10dp" />
 
 
         <io.kodebite.ppf.PinLockView
+            android:background="@color/white"
             android:id="@+id/pin_lock_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:padding="10dp"
-            app:ppf_deleteButtonNormalColor="#FFFFFF"
-            app:ppf_deleteButtonPressedColor="@color/danger"
+            app:ppf_deleteButtonNormalColor="@color/danger"
+            app:ppf_deleteButtonPressedColor="@color/dangerLight"
             app:ppf_deleteButtonSize="24dp"
-            app:ppf_keyTextColor="@color/white"
-            app:ppf_keyTextSize="20sp"
-            app:ppf_pinLength="4" />
+            app:ppf_keyTextColor="@color/textColor"
+            app:ppf_keyTextSize="25sp"
+            app:ppf_keyVerticalSpacing="10sp"
+            app:ppf_pinLength="6" />
 
 
     </RelativeLayout>
