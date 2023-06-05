@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFF</color>
+    <color name="pomegranate">#f4511e</color>
+
+    <color name="greyish">#aaa8a8</color>
+    <color name="mine_shaft">#303030</color>
+
+    <color name="dot_color_normal">#B5B4B4</color>
+
+    <color name="dot_color_filled">#2196F3</color>
+</resources>
