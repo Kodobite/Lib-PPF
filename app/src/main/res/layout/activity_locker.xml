@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/relative_layout"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_launcher_background" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/indicator_dots"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Setup your PIN"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+        <io.kodebite.ppf.IndicatorDots
+            android:id="@+id/indicator_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/pin_lock_view"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            app:ppf_count="4"
+            app:ppf_diameter="15dp"
+            app:ppf_dotColorFilled="#FFFFFF"
+            app:ppf_dotColorNormal="#A8A8A8"
+            app:ppf_padding="10dp" />
+
+
+        <io.kodebite.ppf.PinLockView
+            android:id="@+id/pin_lock_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            app:ppf_deleteButtonNormalColor="#FFFFFF"
+            app:ppf_deleteButtonPressedColor="@color/danger"
+            app:ppf_deleteButtonSize="24dp"
+            app:ppf_keyTextColor="@color/white"
+            app:ppf_keyTextSize="20sp"
+            app:ppf_pinLength="4" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Reset"
+            android:textColor="@color/colorAccent"
+            app:backgroundTint="@color/white" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Next"
+            android:textColor="@color/colorAccent"
+            app:backgroundTint="@color/white" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
