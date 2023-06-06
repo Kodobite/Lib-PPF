@@ -1,8 +1,9 @@
 package com.kodebite.libppf;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.kodebite.libppf.databinding.ActivityLockerBinding;
 
@@ -15,6 +16,11 @@ public class LockerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLockerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.patternBtn.setOnClickListener(v -> {
+            startActivity(new Intent(this, PatternActivity.class));
+        });
+
     }
 
 }

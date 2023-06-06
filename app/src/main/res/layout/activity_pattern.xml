@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/homeBg"
+    tools:context=".PatternActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/homeBg">
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            style="@style/TextAppearance.Material3.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Set Pattern"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/relative_layout"
+        android:layout_below="@id/toolbar_layout"
+        android:background="#F3F4F8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/textView"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_pattern_img" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/plv_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Draw Pattern"
+            android:textColor="@color/textColor"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/plv_layout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/pin_layout_bg"
+            android:padding="10dp">
+
+            <io.kodebite.ppf.PatternLockView
+                android:id="@+id/pattern_lock_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:ppf_aspectRatio="match_width"
+                app:ppf_dotAnimationDuration="150"
+                app:ppf_dotNormalSize="20dp"
+                app:ppf_dotSelectedSize="40dp"
+                app:ppf_lineEndAnimationDuration="100"
+                app:ppf_lineWidth="10dp"
+                app:ppf_patternLength="3"
+                app:ppf_stateCorrectColor="#16B983"
+                app:ppf_stateNormalColor="@color/colorPrimary"
+                app:ppf_stateWrongColor="@color/danger" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reset_button"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Reset"
+            android:textColor="@color/colorAccent"
+            app:backgroundTint="@color/lightBlue"
+            app:cornerRadius="25dp"
+            app:elevation="5dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next_button"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Next"
+            android:textColor="@color/colorAccent"
+            app:backgroundTint="@color/lightBlue"
+            app:cornerRadius="25dp"
+            app:elevation="5dp" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
