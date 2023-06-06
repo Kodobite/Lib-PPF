@@ -21,6 +21,9 @@ public class LockerActivity extends AppCompatActivity {
             startActivity(new Intent(this, PatternActivity.class));
         });
 
+        binding.pinLockView.attachIndicatorDots(binding.indicatorDots);
+        binding.indicatorDots.setCount(binding.pinLockView.getPinLength());
+
     }
 
 }
