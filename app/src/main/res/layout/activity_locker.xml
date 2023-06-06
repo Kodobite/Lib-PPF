@@ -6,9 +6,33 @@
     android:background="#F3F4F8">
 
     <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/homeBg">
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            style="@style/TextAppearance.Material3.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Set Password"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/relative_layout"
+        android:layout_below="@id/toolbar_layout"
         android:background="#F3F4F8">
 
         <LinearLayout
@@ -46,7 +70,7 @@
             android:id="@+id/indicator_dots"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/pin_lock_view"
+            android:layout_above="@id/plv_layout"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             app:ppf_count="6"
@@ -55,25 +79,54 @@
             app:ppf_dotColorNormal="#A8A8A8"
             app:ppf_padding="10dp" />
 
-
-        <io.kodebite.ppf.PinLockView
-            android:background="@color/white"
-            android:id="@+id/pin_lock_view"
+        <RelativeLayout
+            android:id="@+id/plv_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:padding="10dp"
-            app:ppf_deleteButtonNormalColor="@color/danger"
-            app:ppf_deleteButtonPressedColor="@color/dangerLight"
-            app:ppf_deleteButtonSize="24dp"
-            app:ppf_keyTextColor="@color/textColor"
-            app:ppf_keyTextSize="25sp"
-            app:ppf_keyVerticalSpacing="10sp"
-            app:ppf_pinLength="6" />
+            android:background="@drawable/pin_layout_bg"
+            android:padding="10dp">
+
+            <io.kodebite.ppf.PinLockView
+                android:id="@+id/pin_lock_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/pin_layout_bg"
+                app:ppf_deleteButtonNormalColor="@color/danger"
+                app:ppf_deleteButtonPressedColor="@color/dangerLight"
+                app:ppf_deleteButtonSize="30dp"
+                app:ppf_keyTextColor="@color/textColor"
+                app:ppf_keyTextSize="25sp"
+                app:ppf_keyVerticalSpacing="10sp"
+                app:ppf_pinLength="6" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/patternBtn"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/lightBlue"
+                app:cardCornerRadius="15dp"
+                app:elevation="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_lock" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
 
 
     </RelativeLayout>
@@ -81,33 +134,41 @@
 
     <LinearLayout
         android:id="@+id/relative_layout"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
+        android:background="@color/white"
         android:gravity="center">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/reset_button"
+            style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
             android:text="Reset"
             android:textColor="@color/colorAccent"
-            app:backgroundTint="@color/white" />
+            app:backgroundTint="@color/lightBlue"
+            app:cornerRadius="25dp"
+            app:elevation="5dp" />
 
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/next_button"
+            style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
             android:text="Next"
             android:textColor="@color/colorAccent"
-            app:backgroundTint="@color/white" />
+            app:backgroundTint="@color/lightBlue"
+            app:cornerRadius="25dp"
+            app:elevation="5dp" />
 
 
     </LinearLayout>

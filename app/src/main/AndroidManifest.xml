@@ -19,7 +19,8 @@
 
         <activity
             android:name=".LockerActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/WhiteTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

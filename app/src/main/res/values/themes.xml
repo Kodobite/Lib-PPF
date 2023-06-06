@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.LibPPF" parent="Theme.MaterialComponents.Light.NoActionBar">
 
@@ -8,4 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+
+    <style name="WhiteTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/homeBg</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+    </style>
+
 </resources>
