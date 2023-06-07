@@ -30,6 +30,7 @@ public class PatternActivity extends AppCompatActivity {
 
         binding.pinBtn.setOnClickListener(v -> {
             startActivity(new Intent(this, LockerActivity.class));
+            finish();
         });
 
 
@@ -58,7 +59,8 @@ public class PatternActivity extends AppCompatActivity {
 
                 if (ppfSecurity.isPatternSet()) {
                     if (ppfSecurity.isPatternCorrect(PatternLockView.patternToString(binding.patternLockView, pattern))) {
-                        Toast.makeText(PatternActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(PatternActivity.this, MainActivity.class));
+                        finish();
                     } else {
                         Toast.makeText(PatternActivity.this, "Wrong Pattern", Toast.LENGTH_SHORT).show();
                         binding.patternLockView.setViewMode(PatternLockView.PatternViewMode.WRONG);

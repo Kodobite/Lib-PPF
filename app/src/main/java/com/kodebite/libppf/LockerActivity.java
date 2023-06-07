@@ -19,6 +19,7 @@ public class LockerActivity extends AppCompatActivity {
 
         binding.patternBtn.setOnClickListener(v -> {
             startActivity(new Intent(this, PatternActivity.class));
+            finish();
         });
 
         binding.pinLockView.attachIndicatorDots(binding.indicatorDots);
