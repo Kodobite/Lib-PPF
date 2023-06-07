@@ -4,6 +4,7 @@ import static io.kodebite.ppf.PatternLockView.stringToPattern;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,7 +61,12 @@ public class PatternActivity extends AppCompatActivity {
                         Toast.makeText(PatternActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(PatternActivity.this, "Wrong Pattern", Toast.LENGTH_SHORT).show();
-                        binding.patternLockView.clearPattern();
+                        binding.patternLockView.setViewMode(PatternLockView.PatternViewMode.WRONG);
+
+                        new Handler().postDelayed(() -> {
+                            binding.patternLockView.clearPattern();
+                        }, 1000);
+
                     }
                 } else {
                     ppfSecurity.setPattern(PatternLockView.patternToString(binding.patternLockView, pattern));
