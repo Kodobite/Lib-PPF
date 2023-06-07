@@ -50,7 +50,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 groupId 'io.kodebite'
-                artifactId 'ppf'
+                artifactId 'k-ppf'
                 version '0.1'
                 from components.release
             }
