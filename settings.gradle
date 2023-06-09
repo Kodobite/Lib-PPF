@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Lib PPF"
 include ':app'
-include ':PPF'
+//include ':PPF'
